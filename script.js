@@ -69,18 +69,18 @@ function displayTasks() {
         const taskDiv = document.getElementById("task-" + task.id);
         const taskName = taskDiv.querySelector(".task-name");
 
-        // highlight tasks in red
+        // highlight important tasks in red
         if (task.isImportant) {
             taskDiv.style.backgroundColor = "#ffe6e6";
             taskName.style.color = "red";
         }
 
-        // strikethrough completed tasks
+        // apply strikethrough to completed tasks
         if (task.isCompleted) {
             taskName.style.textDecoration = "line-through";
         }
 
-        // set color based on priority
+        // set border color based on priority
         if (task.priority === "High") {
             taskDiv.style.borderLeftColor = "red";
         } else if (task.priority === "Medium") {
@@ -103,7 +103,7 @@ function toggleComplete(id) {
     displayTasks();
 }
 
-// delete task
+// delete task functionality
 function deleteTask(id) {
     for (let i = 0; i < tasks.length; i++) {
         if (tasks[i].id === id) {
